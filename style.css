@@ -1,0 +1,60 @@
+ /* animation */
+/* setting */
+:root{
+  --main-color:#ffba79;
+  --sub-color:#ffefdf;
+  --eye-color:#7c3c19;
+  --cheek-color:#fd937b;
+  --border-color:#4f2002;
+
+}
+/* reset*/
+body{
+  margin:0;
+  padding:0;
+}
+ /* layout */
+
+/* design */
+*,
+*::after,
+*::before{
+  box-sizing:border-box;
+}
+body{
+  background:#ffb6b0;
+}
+.hamster{
+  margin:200px auto;
+  width:500px;
+  height:500px;
+  border-radius:50% 50% 50% 50%;
+  background:var(--main-color);
+  border:10px solid var(--border-color);
+  
+}
+.ear-wrapper{
+  position:relative;
+  /* background:blue; */
+  height:100px;
+}
+.ear{
+  position:absolute;
+  top:-30px;
+  width:150px;
+  height:130px;
+  background:var(--main-color);
+  border:10px solid var(--border-color);
+  border-radius:50% 50% 40% 40%;
+  border-bottom-color:var(--main-color);
+
+}
+.ear.left{
+  left:-10px;
+  transform:rotate(-45deg);
+
+}
+.ear.right{
+  right:-10px;
+  transform:rotate(45deg);
+}
