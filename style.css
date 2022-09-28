@@ -24,20 +24,37 @@ body{
 body{
   background:#ffb6b0;
 }
-.hamster{
+
+/* 동그라미 얼굴 */
+.hamster-face{
+  position:relative;
   margin:200px auto;
   width:500px;
-  height:500px;
+  height:490px;
   border-radius:50% 50% 50% 50%;
-  background:var(--main-color);
+  background:var( --sub-color);
   border:10px solid var(--border-color);
-  
 }
-.ear-wrapper{
-  position:relative;
-  /* background:blue; */
-  height:100px;
+/* 머리색 */
+.head{
+  position:absolute;
+  top:30px;
+  width:400px;
+  height:280px;
+  background:var(--main-color);
+  border-radius:50% 50% 50% 50%;
+  z-index:2;
 }
+.head.left{
+  transform:rotate(-45deg);
+  left:-32px;
+
+}
+.head.right{
+  transform:rotate(45deg);
+  right:-32px;
+}
+/* 귀 */
 .ear{
   position:absolute;
   top:-30px;
@@ -47,7 +64,6 @@ body{
   border:10px solid var(--border-color);
   border-radius:50% 50% 40% 40%;
   border-bottom-color:var(--main-color);
-
 }
 .ear.left{
   left:-10px;
@@ -58,3 +74,160 @@ body{
   right:-10px;
   transform:rotate(45deg);
 }
+.earline{
+  position:absolute;
+  width:70px;
+  height:20px;
+  background:var(--border-color);
+  border-radius:30%;
+  top:50px;
+}
+.earline.left{
+  left:30px;
+  transform:rotate(90deg);
+}
+.earline.right{
+  right:30px;
+  transform:rotate(90deg);
+}
+/* 눈 */
+.eye{
+  position:absolute;
+  width:70px;
+  height:110px;
+  border-radius:50%;
+  background:#5a2f05;
+  top:180px;
+  border:10px solid var(--border-color);
+  z-index:2;
+}
+.eye.left{
+  left:120px;
+}
+.eye.right{
+  right:120px;
+}
+
+.pupil{
+  position:absolute;
+  width:30px;
+  height:30px;
+  background:#fffefd;
+  border-radius:50%;
+  top:10px;
+  left:10px;
+}
+/* 코 */
+.nose {
+  position: absolute;
+  top: 280px;
+  left: 230px;
+  margin-left: -16px;
+  width: 50px;
+  height: 35px;
+  border:15px solid var(--border-color);
+  border-radius: 50% 50% 50% 50%;
+  background: var(--cheek-color);
+  z-index:3;
+}
+/* 볼터치 */
+.cheek-makeup{
+  position:absolute;
+  width:180px;
+  height:60px;
+  background:var(--cheek-color);
+  clip-path: ellipse(25% 40% at 50% 50%);
+  top:280px;
+  z-index:2;
+}
+.cheek-makeup.left{
+  left:10px;
+}
+.cheek-makeup.right{
+  right:10px;
+}
+
+/* 입 */
+.mouth{
+  position: absolute;
+  top: 280px;
+  width: 90px;
+  height: 70px;
+  border: 10px solid var(--border-color);
+  border-top-color: var(--main-color);
+  border-radius: 50%;
+  z-index:2;
+}
+.mouth.left{
+  left:155px;
+  transform:rotate(15deg);
+  border-left-color: var(--main-color);
+}
+.mouth.right{
+  right:155px;
+  transform:rotate(-15deg);
+  border-right-color: var(--main-color);
+}
+
+/* 볼살 */
+.face-bottom{
+  position:absolute;
+  top:175px;
+  left:-20px;
+  width:520px;
+  height:310px;
+  background:var(--sub-color);
+  border-radius:50% 50%;
+  border:10px solid var(--border-color);
+  z-index:1;
+}
+.seed{
+  display:block;
+  margin:0 auto;
+  width:400px;
+  height:300px;
+}
+
+
+
+
+
+/* 디자인적으로 별로라서 png 이미지 파일로 대체  */
+/* .seed{
+  position:absolute;
+  top:480px;
+  z-index:2;
+  width:100px;
+  height:150px;
+  background:#3e4648;
+  border:10px double #ddc89b;
+  border-radius:100% 0% 70% 30% / 67% 0% 100% 33% ;
+  transform:skew(-11deg);
+  transform:scale(1.1);
+}
+
+.seed::after{
+  content:'';
+  display:inline-block;
+  position:absolute;
+  top:0px;
+  left:25px;
+  width:10px;
+  height:110px;
+  background:#ddc89b;
+  border:1px solid #3e4648 ;
+  border-radius:40%;
+  transform:rotate(30deg);
+}
+.seed-line-add{
+  position:absolute;
+  top:13px;
+  left:42px;
+  z-index:2;
+  width:10px;
+  height:115px;
+  border-radius:40%;
+  background:#ddc89b;
+  border:1px solid #3e4648 ;
+  transform:rotate(30deg);
+} */
