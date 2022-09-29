@@ -18,3 +18,5 @@ class=hamster 에 position:relative를 주다보니
   
 2) 반응형이 되지 않아서 아쉽다. 
 
+3) 눈, 볼, 귀 와 같이 양옆에 2개 있는 것들은 flex 로 주고 했어도 괜찮았을 것 같다.
+
