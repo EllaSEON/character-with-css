@@ -1,4 +1,60 @@
+ /* 소개글 */
+ p{
+  text-align:center;
+  margin-top:150px;
+  font-size:50px;
+  font-weight:bold;
+  color:#ffff;
+  text-shadow:5px 5px 5px #4f2002;
+ }
+ 
+ 
+ 
  /* animation */
+ @keyframes seed-moving{
+  60%{
+    transform:translate(5px,-150px);
+  }
+  80%{
+    transform:translate(5px,-70px);
+  }
+  100%{
+    transform:translate(0);
+  }
+}
+
+@keyframes face-moving{
+  0%{
+    transform:scaleX(1.0);
+  }
+  60%{transform:scaleX(1.1);
+  }
+  100%{
+    transform:scaleX(1.0);
+  }
+}
+
+@keyframes pupil-moving{
+  0%{
+    transform:scale(1.0);
+  }
+  40%{transform:scale(1.8);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  60%{transform:scale(1.3);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background:#FFD700;
+  }
+  100%{
+    transform:scale(1.0);
+  }
+}
+@keyframes cheek-moving{
+ 60%{
+    box-shadow: 4px 4px 10px #FF4500;
+  }
+}
+
 /* setting */
 :root{
   --main-color:#ffba79;
@@ -26,7 +82,7 @@ body{
 }
 
 /* 동그라미 얼굴 */
-.hamster-face{
+.hamster{
   position:relative;
   margin:200px auto;
   width:500px;
@@ -68,7 +124,6 @@ body{
 .ear.left{
   left:-10px;
   transform:rotate(-45deg);
-
 }
 .ear.right{
   right:-10px;
@@ -116,6 +171,7 @@ body{
   border-radius:50%;
   top:10px;
   left:10px;
+  animation:pupil-moving 4s linear infinite both;
 }
 /* 코 */
 .nose {
@@ -128,23 +184,24 @@ body{
   border:15px solid var(--border-color);
   border-radius: 50% 50% 50% 50%;
   background: var(--cheek-color);
-  z-index:3;
+  z-index:4;
 }
 /* 볼터치 */
 .cheek-makeup{
   position:absolute;
-  width:180px;
-  height:60px;
+  width:85px;
+  height:45px;
   background:var(--cheek-color);
-  clip-path: ellipse(25% 40% at 50% 50%);
-  top:280px;
+  border-radius:50%;
+  top:285px;
   z-index:2;
+  animation:cheek-moving 4s infinite both;
 }
 .cheek-makeup.left{
-  left:10px;
+  left:50px;
 }
 .cheek-makeup.right{
-  right:10px;
+  right:50px;
 }
 
 /* 입 */
@@ -156,7 +213,7 @@ body{
   border: 10px solid var(--border-color);
   border-top-color: var(--main-color);
   border-radius: 50%;
-  z-index:2;
+  z-index:3;
 }
 .mouth.left{
   left:155px;
@@ -168,7 +225,6 @@ body{
   transform:rotate(-15deg);
   border-right-color: var(--main-color);
 }
-
 /* 볼살 */
 .face-bottom{
   position:absolute;
@@ -180,14 +236,19 @@ body{
   border-radius:50% 50%;
   border:10px solid var(--border-color);
   z-index:1;
+  animation:face-moving 4s linear infinite both;
 }
 .seed{
+  position:absolute;
+  z-index:2;
+  top:100%;
+  left:25%;
   display:block;
   margin:0 auto;
-  width:400px;
-  height:300px;
+  width:200px;
+  height:200px;
+  animation:seed-moving 4s linear infinite;
 }
-
 
 
 
